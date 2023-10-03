@@ -2,7 +2,7 @@ import { UserService } from "./../user/user.service";
 import { UnauthorizedException, Injectable } from "@nestjs/common";
 import { JwtService } from "@nestjs/jwt";
 import * as argon2 from "argon2";
-import { User } from "src/types";
+import { UserType } from "src/types";
 
 @Injectable()
 export class AuthService {
@@ -20,7 +20,7 @@ export class AuthService {
     throw new UnauthorizedException("Неверный email или пароль");
   }
 
-  async login(user: User) {
+  async login(user: UserType) {
     const { id, email } = user;
 
     return {

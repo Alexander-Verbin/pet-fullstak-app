@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 
-export type User = {
+export type UserType = {
   id: string;
   email: string;
 };
