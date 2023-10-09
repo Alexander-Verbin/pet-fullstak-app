@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { JwtService } from "@nestjs/jwt";
 import { BadRequestException, Injectable } from "@nestjs/common";
 import { CreateUserDto } from "./dto/create-user.dto";

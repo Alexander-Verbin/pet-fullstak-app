@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Category } from "src/category/entities/category.entity";
 import { Transaction } from "src/transactions/entities/transaction.entity";
 import {

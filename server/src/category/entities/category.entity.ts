@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Transaction } from "src/transactions/entities/transaction.entity";
 import { User } from "src/user/entities/user.entity";
 import {
