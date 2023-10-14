@@ -30,7 +30,7 @@
 
 @layer utilities {
 	.btn-red {
-		@apply border-b-red-900 hover:bg-red-800;
+		@apply bg-red-900 hover:bg-red-800;
 	}
 	.btn-green {
 		@apply bg-green-600 hover:bg-green-800;
