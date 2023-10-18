@@ -1,9 +1,22 @@
 import { FC } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaBtc, FaSignOutAlt } from "react-icons/fa";
+import { useAppDispatch, useAuth } from "../hooks";
+import { logout } from "../store/slices/userSlice";
+import { removeTokenFromLS } from "../helpers/LS.helper";
+import { toast } from "react-toastify";
 
 export const Header: FC = () => {
-	const isAuth = true;
+	const isAuth = useAuth();
+	const dispatch = useAppDispatch();
+	const navigate = useNavigate();
+
+	const logoutHandler = () => {
+		dispatch(logout());
+		removeTokenFromLS("token");
+		toast.success("Вы вышли из аккаунта");
+		navigate("/auth");
+	};
 	return (
 		<header className='flex items-center p-6 shadow-sm bg-slate-800 backdrop-blur-sm'>
 			<Link to={"/"}>
@@ -43,7 +56,10 @@ export const Header: FC = () => {
 				</nav>
 			)}
 			{isAuth ? (
-				<button type='button' className='btn btn-red'>
+				<button
+					onClick={() => logoutHandler()}
+					type='button'
+					className='btn btn-red'>
 					<span>Выйти</span>
 					<FaSignOutAlt />
 				</button>
