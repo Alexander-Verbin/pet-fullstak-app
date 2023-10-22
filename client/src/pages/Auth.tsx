@@ -39,7 +39,7 @@ export const Auth: FC = () => {
 				setTokenToLS("token", data.token);
 				dispatch(login(data));
 				navigate("/");
-				toast.success("Вход в аккаунт был выполнен успешно");
+				toast.success("Вы вошли в аккаунт");
 			}
 			// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		} catch (err: any) {

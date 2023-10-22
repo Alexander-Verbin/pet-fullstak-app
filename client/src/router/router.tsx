@@ -5,6 +5,7 @@ import { Home } from "../pages/Home";
 import { Transactions } from "../pages/Transactions";
 import { Categories } from "../pages/Categories";
 import { Auth } from "../pages/Auth";
+import { ProtectedRout } from "../components/ProtectedRout";
 
 export const router = createBrowserRouter([
 	{
@@ -14,15 +15,27 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				index: true,
-				element: <Home />,
+				element: (
+					<ProtectedRout>
+						<Home />
+					</ProtectedRout>
+				),
 			},
 			{
 				path: "transactions",
-				element: <Transactions />,
+				element: (
+					<ProtectedRout>
+						<Transactions />
+					</ProtectedRout>
+				),
 			},
 			{
 				path: "categories",
-				element: <Categories />,
+				element: (
+					<ProtectedRout>
+						<Categories />
+					</ProtectedRout>
+				),
 			},
 			{
 				path: "auth",
