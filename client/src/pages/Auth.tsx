@@ -49,7 +49,7 @@ export const Auth: FC = () => {
 		}
 	};
 	return (
-		<div className='mt-40 flex flex-col justify-center items-center bg-slate-900 text-white'>
+		<section className='mt-40 flex flex-col justify-center items-center bg-slate-900 text-white'>
 			<h1 className='mb-10 text-center text-xl'>
 				{isLogin ? "Вход" : "Регистрация"}
 			</h1>
@@ -85,6 +85,6 @@ export const Auth: FC = () => {
 					{isLogin ? "Ещё нет аккаунта?" : "Уже есть аккаунт?"}
 				</button>
 			</div>
-		</div>
+		</section>
 	);
 };

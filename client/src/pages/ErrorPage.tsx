@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export const ErrorPage: FC = () => {
 	return (
-		<div className='min-h-screen bg-slate-900 font-roboto text-white flex justify-center items-center flex-col gap-10'>
+		<section className='min-h-screen bg-slate-900 font-roboto text-white flex justify-center items-center flex-col gap-10'>
 			<h1 className='text-5xl'>Страница не найдена</h1>
 			<img
 				src={image}
@@ -18,6 +18,6 @@ export const ErrorPage: FC = () => {
 				to={"/"}>
 				Вернуться на главную
 			</Link>
-		</div>
+		</section>
 	);
 };

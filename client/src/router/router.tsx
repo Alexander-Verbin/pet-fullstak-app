@@ -3,7 +3,11 @@ import { Layuot } from "../pages/Layuot";
 import { ErrorPage } from "../pages/ErrorPage";
 import { Home } from "../pages/Home";
 import { Transactions } from "../pages/Transactions";
-import { Categories } from "../pages/Categories";
+import {
+	Categories,
+	categoriesActions,
+	categoriesLoader,
+} from "../pages/Categories";
 import { Auth } from "../pages/Auth";
 import { ProtectedRout } from "../components/ProtectedRout";
 
@@ -31,6 +35,8 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: "categories",
+				action: categoriesActions,
+				loader: categoriesLoader,
 				element: (
 					<ProtectedRout>
 						<Categories />

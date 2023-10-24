@@ -21,3 +21,11 @@ export type UserType = {
 	email: string;
 	token: string;
 };
+
+export type CategoryType = {
+	title: string;
+	id: number;
+	createdAt: string;
+	updatedAt: string;
+	transactions: [];
+};
