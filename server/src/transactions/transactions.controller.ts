@@ -23,6 +23,20 @@ import { AuthorGuard } from "src/guard/author.guard";
 export class TransactionsController {
   constructor(private readonly transactionsService: TransactionsService) {}
 
+  @Get("pagination")
+  @UseGuards(JwtAuthGuard)
+  findAllWidthPagination(
+    @Req() req,
+    @Query("page") page: number,
+    @Query("limit") limit: number,
+  ) {
+    return this.transactionsService.findAllWidthPagination(
+      Number(req.user.id),
+      Number(page),
+      Number(limit),
+    );
+  }
+
   @Post()
   @UsePipes(new ValidationPipe())
   @UseGuards(JwtAuthGuard)
@@ -37,20 +51,6 @@ export class TransactionsController {
   @UseGuards(JwtAuthGuard)
   findAll(@Req() req) {
     return this.transactionsService.findAll(Number(req.user.id));
-  }
-
-  @Get("pagination")
-  @UseGuards(JwtAuthGuard)
-  findAllWidthPagination(
-    @Req() req,
-    @Query("page") page: number,
-    @Query("limit") limit: number,
-  ) {
-    return this.transactionsService.findAllWidthPagination(
-      Number(req.user.id),
-      Number(page),
-      Number(limit),
-    );
   }
 
   @Get(":type/find")

@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Form } from "react-router-dom";
 
 type PropsType = {
-	type: "POST" | "PATCH";
+	type: "post" | "patch";
 	id?: number;
 	setVisibleModal: (visibleModal: boolean) => void;
 };
@@ -27,7 +27,7 @@ export const CategoryModal: FC<PropsType> = ({ type, id, setVisibleModal }) => {
 				</label>
 				<div className='flex items-center gap-2'>
 					<button className='btn btn-green' type='submit'>
-						{type === "PATCH" ? "Сохранить" : "Создать"}
+						{type === "patch" ? "Сохранить" : "Создать"}
 					</button>
 					<button
 						onClick={() => setVisibleModal(false)}

@@ -36,3 +36,12 @@
 		@apply bg-green-600 hover:bg-green-800;
 	}
 }
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}

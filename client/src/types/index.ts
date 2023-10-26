@@ -29,3 +29,7 @@ export type CategoryType = {
 	updatedAt: string;
 	transactions: [];
 };
+
+export type ResponseTransactionLoaderType = {
+	categories: Array<CategoryType>;
+};

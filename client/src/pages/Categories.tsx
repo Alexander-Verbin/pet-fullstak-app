@@ -87,12 +87,12 @@ export const Categories: FC = () => {
 			</section>
 			{/* Add Category Modal */}
 			{visibleModal && (
-				<CategoryModal type='POST' setVisibleModal={setVisibleModal} />
+				<CategoryModal type='post' setVisibleModal={setVisibleModal} />
 			)}
 			{/* Edit Category Modal */}
 			{visibleModal && isEdit && (
 				<CategoryModal
-					type='PATCH'
+					type='patch'
 					id={categoryId}
 					setVisibleModal={setVisibleModal}
 				/>
