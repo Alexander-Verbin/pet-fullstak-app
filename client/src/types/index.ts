@@ -30,6 +30,26 @@ export type CategoryType = {
 	transactions: [];
 };
 
+export type TransactionCategoryType = {
+	id: number;
+	title: string;
+	createdAt: string;
+	updatedAt: string;
+};
+
+export type TransactionType = {
+	id: number;
+	title: string;
+	type: "income" | "expense";
+	amount: number;
+	createdAt: string;
+	updatedAt: string;
+	category: TransactionCategoryType;
+};
+
 export type ResponseTransactionLoaderType = {
 	categories: Array<CategoryType>;
+	transactions: Array<TransactionType>;
+	totalIncome: number;
+	totalExpense: number;
 };
